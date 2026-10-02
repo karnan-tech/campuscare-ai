@@ -272,6 +272,8 @@ section{scroll-margin-top:80px;}
   border-bottom:none;
 }
 
+/* AI */
+
 .ai-section{
   padding:70px 8%;
   background:#111827;
@@ -323,6 +325,8 @@ section{scroll-margin-top:80px;}
   outline:none;
 }
 
+/* INFORMATION */
+
 .info-section{
   padding:70px 8%;
 }
@@ -340,7 +344,9 @@ section{scroll-margin-top:80px;}
   border:1px solid #e5e7eb;
 }
 
-.info-box h3{margin-bottom:15px;}
+.info-box h3{
+  margin-bottom:15px;
+}
 
 .info-box p,
 .info-box li{
@@ -348,7 +354,11 @@ section{scroll-margin-top:80px;}
   line-height:1.7;
 }
 
-.info-box ul{padding-left:20px;}
+.info-box ul{
+  padding-left:20px;
+}
+
+/* REPORT */
 
 .report{
   padding:70px 8%;
@@ -380,6 +390,8 @@ section{scroll-margin-top:80px;}
   resize:none;
 }
 
+/* FOOTER */
+
 footer{
   text-align:center;
   padding:28px;
@@ -387,7 +399,10 @@ footer{
   color:white;
 }
 
+/* RESPONSIVE */
+
 @media(max-width:900px){
+
   .dashboard-grid{
     grid-template-columns:repeat(2,1fr);
   }
@@ -398,9 +413,14 @@ footer{
 }
 
 @media(max-width:800px){
-  nav{padding:16px 5%;}
 
-  nav a{display:none;}
+  nav{
+    padding:16px 5%;
+  }
+
+  nav a{
+    display:none;
+  }
 
   .hero{
     flex-direction:column;
@@ -408,9 +428,13 @@ footer{
     gap:40px;
   }
 
-  .hero h1{font-size:42px;}
+  .hero h1{
+    font-size:42px;
+  }
 
-  .robot{font-size:100px;}
+  .robot{
+    font-size:100px;
+  }
 
   .cards,
   .info-grid,
@@ -429,6 +453,7 @@ footer{
 }
 
 @media(max-width:500px){
+
   .dashboard-grid{
     grid-template-columns:1fr;
   }
@@ -438,7 +463,7 @@ footer{
 
 <body>
 
-<!-- STUDENT LOGIN -->
+<!-- ================= STUDENT LOGIN ================= -->
 
 <div id="loginPage" style="
 min-height:100vh;
@@ -449,31 +474,100 @@ background:linear-gradient(135deg,#eff6ff,#f0fdf4);
 padding:30px;
 ">
 
-...
+<div style="
+background:white;
+width:100%;
+max-width:420px;
+padding:35px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+">
+
+<h2 style="text-align:center;margin-bottom:8px;">
+🎓 Student Login
+</h2>
+
+<p style="text-align:center;color:#6b7280;margin-bottom:25px;">
+Login to access your personal dashboard
+</p>
+
+<input
+id="loginId"
+type="text"
+placeholder="Student ID"
+style="
+width:100%;
+padding:14px;
+margin-bottom:15px;
+border:1px solid #d1d5db;
+border-radius:9px;
+"
+>
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Password"
+style="
+width:100%;
+padding:14px;
+margin-bottom:18px;
+border:1px solid #d1d5db;
+border-radius:9px;
+"
+>
+
+<button
+class="btn"
+onclick="studentLogin()"
+style="width:100%;"
+>
+Login →
+</button>
+
+<p style="
+text-align:center;
+color:#9ca3af;
+margin-top:18px;
+font-size:13px;
+">
+Demo ID: CCAI-2026 | Password: 1234
+</p>
+
+</div>
 </div>
 
-<!-- NAVBAR -->
+
+<!-- ================= NAVBAR ================= -->
 
 <nav>
-<div class="logo">🎓 CampusCare AI</div>
+
+<div class="logo">
+🎓 CampusCare AI
+</div>
 
 <div>
+
 <a href="#home">Home</a>
 <a href="#dashboard">Dashboard</a>
 <a href="#features">Features</a>
 <a href="#assistant">AI Assistant</a>
 <a href="#report">Report</a>
+
 </div>
+
 </nav>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero" id="home">
 
 <div class="hero-text">
 
-<div class="badge">🚀 Smart Campus Innovation</div>
+<div class="badge">
+🚀 Smart Campus Innovation
+</div>
 
 <h1>
 Your Smart <span>Campus Assistant</span>
@@ -490,12 +584,14 @@ Open Student Dashboard →
 
 </div>
 
-<div class="robot">🎓🤖</div>
+<div class="robot">
+🎓🤖
+</div>
 
 </section>
 
 
-<!-- STUDENT DASHBOARD -->
+<!-- ================= DASHBOARD ================= -->
 
 <section class="dashboard" id="dashboard">
 
@@ -507,13 +603,22 @@ Open Student Dashboard →
 Your campus activities and academic overview in one place.
 </p>
 
-
 <div class="dashboard-header">
 
 <div class="student-profile">
-<h3>👤 Student Profile</h3>
-<p><strong>Name:</strong> Campus Student</p>
-<p><strong>Student ID:</strong> CCAI-2026</p>
+
+<h3>
+👤 Student Profile
+</h3>
+
+<p>
+<strong>Name:</strong> Campus Student
+</p>
+
+<p>
+<strong>Student ID:</strong> CCAI-2026
+</p>
+
 </div>
 
 <button class="btn" onclick="openAssistant()">
@@ -554,10 +659,11 @@ Your campus activities and academic overview in one place.
 
 <div class="dashboard-content">
 
-
 <div class="dashboard-box">
 
-<h3>📚 Course Attendance</h3>
+<h3>
+📚 Course Attendance
+</h3>
 
 <div class="course">
 
@@ -572,7 +678,6 @@ Your campus activities and academic overview in one place.
 
 </div>
 
-
 <div class="course">
 
 <div class="course-top">
@@ -586,7 +691,6 @@ Your campus activities and academic overview in one place.
 
 </div>
 
-
 <div class="course">
 
 <div class="course-top">
@@ -599,7 +703,6 @@ Your campus activities and academic overview in one place.
 </div>
 
 </div>
-
 
 <div class="course">
 
@@ -619,7 +722,9 @@ Your campus activities and academic overview in one place.
 
 <div class="dashboard-box">
 
-<h3>📢 Latest Updates</h3>
+<h3>
+📢 Latest Updates
+</h3>
 
 <ul class="dashboard-list">
 
@@ -640,7 +745,9 @@ Your campus activities and academic overview in one place.
 
 <div class="dashboard-box">
 
-<h3>📝 Pending Tasks</h3>
+<h3>
+📝 Pending Tasks
+</h3>
 
 <ul class="dashboard-list">
 
@@ -657,7 +764,9 @@ Your campus activities and academic overview in one place.
 
 <div class="dashboard-box">
 
-<h3>⚡ Quick Actions</h3>
+<h3>
+⚡ Quick Actions
+</h3>
 
 <br>
 
@@ -684,7 +793,7 @@ Your campus activities and academic overview in one place.
 </section>
 
 
-<!-- FEATURES -->
+<!-- ================= FEATURES ================= -->
 
 <section class="features" id="features">
 
@@ -698,12 +807,15 @@ Smart tools designed to make campus life easier.
 
 <div class="cards">
 
-
 <div class="card">
 
-<div class="icon">🤖</div>
+<div class="icon">
+🤖
+</div>
 
-<h3>AI Assistant</h3>
+<h3>
+AI Assistant
+</h3>
 
 <p>
 Ask common campus questions and get instant guidance.
@@ -718,9 +830,13 @@ Ask AI →
 
 <div class="card">
 
-<div class="icon">📚</div>
+<div class="icon">
+📚
+</div>
 
-<h3>Study Hub</h3>
+<h3>
+Study Hub
+</h3>
 
 <p>
 Find useful academic resources and study support.
@@ -735,9 +851,13 @@ Explore →
 
 <div class="card">
 
-<div class="icon">🚨</div>
+<div class="icon">
+🚨
+</div>
 
-<h3>Emergency Help</h3>
+<h3>
+Emergency Help
+</h3>
 
 <p>
 Quickly access important emergency contacts.
@@ -752,9 +872,13 @@ View Contacts →
 
 <div class="card">
 
-<div class="icon">📢</div>
+<div class="icon">
+📢
+</div>
 
-<h3>Announcements</h3>
+<h3>
+Announcements
+</h3>
 
 <p>
 Stay updated with important campus announcements.
@@ -769,9 +893,13 @@ View Updates →
 
 <div class="card">
 
-<div class="icon">♻️</div>
+<div class="icon">
+♻️
+</div>
 
-<h3>Sustainability</h3>
+<h3>
+Sustainability
+</h3>
 
 <p>
 Discover simple ways to build a greener campus.
@@ -786,9 +914,13 @@ Learn More →
 
 <div class="card">
 
-<div class="icon">📝</div>
+<div class="icon">
+📝
+</div>
 
-<h3>Report an Issue</h3>
+<h3>
+Report an Issue
+</h3>
 
 <p>
 Report campus problems and help improve student life.
@@ -800,13 +932,12 @@ Report Now →
 
 </div>
 
-
 </div>
 
 </section>
 
 
-<!-- AI ASSISTANT -->
+<!-- ================= AI ASSISTANT ================= -->
 
 <section class="ai-section" id="assistant">
 
@@ -814,7 +945,8 @@ Report Now →
 🤖 CampusCare AI Assistant
 </h2>
 
-<p class="section-subtitle" style="text-align:center;color:#cbd5e1;">
+<p class="section-subtitle"
+style="text-align:center;color:#cbd5e1;">
 Ask a question about campus life.
 </p>
 
@@ -851,7 +983,7 @@ Send
 </section>
 
 
-<!-- INFORMATION HUB -->
+<!-- ================= INFORMATION HUB ================= -->
 
 <section class="info-section">
 
@@ -866,16 +998,19 @@ Quick access to useful campus information.
 
 <div class="info-grid">
 
-
 <div class="info-box">
 
-<h3>📖 Study Resources</h3>
+<h3>
+📖 Study Resources
+</h3>
 
 <ul>
+
 <li>Programming fundamentals</li>
 <li>Engineering mathematics</li>
 <li>Placement preparation</li>
 <li>Technical learning resources</li>
+
 </ul>
 
 </div>
@@ -883,13 +1018,17 @@ Quick access to useful campus information.
 
 <div class="info-box">
 
-<h3>🚨 Emergency Support</h3>
+<h3>
+🚨 Emergency Support
+</h3>
 
 <ul>
+
 <li>Emergency Services: 112</li>
 <li>Ambulance: 108</li>
 <li>Police: 100</li>
 <li>Campus Help Desk</li>
+
 </ul>
 
 </div>
@@ -897,13 +1036,17 @@ Quick access to useful campus information.
 
 <div class="info-box">
 
-<h3>📢 Campus Updates</h3>
+<h3>
+📢 Campus Updates
+</h3>
 
 <p>
+
 • Placement training updates<br>
 • College events<br>
 • Examination announcements<br>
 • Student activities
+
 </p>
 
 </div>
@@ -911,33 +1054,44 @@ Quick access to useful campus information.
 
 <div class="info-box">
 
-<h3>♻️ Green Campus</h3>
+<h3>
+♻️ Green Campus
+</h3>
 
 <p>
+
 Reduce plastic usage, separate waste,
 save electricity and water, and participate
 in campus tree-planting activities.
+
 </p>
 
 </div>
-
 
 </div>
 
 </section>
 
 
-<!-- REPORT -->
+<!-- ================= REPORT ================= -->
 
 <section class="report" id="report">
 
 <h2 class="section-title">
 📝 Report a Campus Issue
 </h2>
-<div id="recentReports" style="max-width:600px;margin:25px auto 0;text-align:left;"></div>
+
 <p class="section-subtitle">
 Help us make the campus better.
 </p>
+
+<div id="recentReports"
+style="
+max-width:600px;
+margin:25px auto 0;
+text-align:left;
+">
+</div>
 
 
 <div class="report-form">
@@ -959,7 +1113,10 @@ id="reportMessage"
 placeholder="Describe the issue..."
 ></textarea>
 
-<button class="btn" onclick="submitReport()">
+<button
+class="btn"
+onclick="submitReport()"
+>
 Submit Report
 </button>
 
@@ -968,7 +1125,7 @@ Submit Report
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -981,6 +1138,12 @@ One Campus. One Smart Assistant.
 </p>
 
 </footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
 function studentLogin(){
 
   const id = document.getElementById("loginId").value.trim();
@@ -1000,199 +1163,247 @@ function studentLogin(){
 
 }
 
-<script>
 
 function openAssistant(){
 
-document.getElementById("assistant").scrollIntoView();
+  document.getElementById("assistant").scrollIntoView();
 
-document.getElementById("userInput").focus();
+  document.getElementById("userInput").focus();
 
 }
 
 
 function askAI(){
 
-const input=document.getElementById("userInput");
+  const input = document.getElementById("userInput");
 
-const chat=document.getElementById("chat");
+  const chat = document.getElementById("chat");
 
-const question=input.value.trim();
+  const question = input.value.trim();
 
-if(question===""){
-return;
-}
+  if(question === ""){
+    return;
+  }
 
+  chat.innerHTML +=
+  `<div class="message user">${question}</div>`;
 
-chat.innerHTML+=
-`<div class="message user">${question}</div>`;
+  let answer = "";
 
-
-let answer="";
-
-const q=question.toLowerCase();
+  const q = question.toLowerCase();
 
 
-if(q.includes("library"))
+  if(q.includes("library")){
 
-answer=
-"📚 The library section can provide information about library location, timings and available resources.";
+    answer =
+    "📚 The library section can provide information about library location, timings and available resources.";
+
+  }
+
+  else if(
+    q.includes("emergency") ||
+    q.includes("ambulance")
+  ){
+
+    answer =
+    "🚨 For emergencies, contact 112. Ambulance service in India can be reached at 108.";
+
+  }
+
+  else if(
+    q.includes("study") ||
+    q.includes("notes")
+  ){
+
+    answer =
+    "📖 You can use the Study Hub for academic resources, placement preparation and learning materials.";
+
+  }
+
+  else if(q.includes("placement")){
+
+    answer =
+    "💼 Placement preparation can include aptitude, coding, communication and interview practice.";
+
+  }
+
+  else if(q.includes("exam")){
+
+    answer =
+    "📝 Check your college's official announcements for examination schedules and updates.";
+
+  }
+
+  else if(
+    q.includes("eco") ||
+    q.includes("environment") ||
+    q.includes("waste")
+  ){
+
+    answer =
+    "♻️ You can help the campus by reducing plastic, separating waste and saving electricity and water.";
+
+  }
+
+  else if(
+    q.includes("hello") ||
+    q.includes("hi")
+  ){
+
+    answer =
+    "👋 Hello! I'm CampusCare AI. How can I help you today?";
+
+  }
+
+  else{
+
+    answer =
+    "🤖 I can help with campus information, study resources, emergency support, placements and sustainability.";
+
+  }
 
 
-else if(
-q.includes("emergency") ||
-q.includes("ambulance")
-)
+  setTimeout(function(){
 
-answer=
-"🚨 For emergencies, contact 112. Ambulance service in India can be reached at 108.";
+    chat.innerHTML +=
+    `<div class="message bot">${answer}</div>`;
 
+    chat.scrollTop = chat.scrollHeight;
 
-else if(
-q.includes("study") ||
-q.includes("notes")
-)
-
-answer=
-"📖 You can use the Study Hub for academic resources, placement preparation and learning materials.";
+  },500);
 
 
-else if(q.includes("placement"))
-
-answer=
-"💼 Placement preparation can include aptitude, coding, communication and interview practice.";
-
-
-else if(q.includes("exam"))
-
-answer=
-"📝 Check your college's official announcements for examination schedules and updates.";
-
-
-else if(
-q.includes("eco") ||
-q.includes("environment") ||
-q.includes("waste")
-)
-
-answer=
-"♻️ You can help the campus by reducing plastic, separating waste and saving electricity and water.";
-
-
-else if(
-q.includes("hello") ||
-q.includes("hi")
-)
-
-answer=
-"👋 Hello! I'm CampusCare AI. How can I help you today?";
-
-
-else
-
-answer=
-"🤖 I can help with campus information, study resources, emergency support, placements and sustainability.";
-
-
-setTimeout(function(){
-
-chat.innerHTML+=
-`<div class="message bot">${answer}</div>`;
-
-chat.scrollTop=chat.scrollHeight;
-
-},500);
-
-
-input.value="";
+  input.value = "";
 
 }
 
 
 function showStudy(){
 
-alert(
-"📚 Study Hub\n\n"+
-"• Programming Resources\n"+
-"• Mathematics\n"+
-"• Placement Preparation\n"+
-"• Technical Learning"
-);
+  alert(
+  "📚 Study Hub\n\n"+
+  "• Programming Resources\n"+
+  "• Mathematics\n"+
+  "• Placement Preparation\n"+
+  "• Technical Learning"
+  );
 
 }
 
 
 function showEmergency(){
 
-alert(
-"🚨 Emergency Help\n\n"+
-"Emergency: 112\n"+
-"Ambulance: 108\n"+
-"Police: 100"
-);
+  alert(
+  "🚨 Emergency Help\n\n"+
+  "Emergency: 112\n"+
+  "Ambulance: 108\n"+
+  "Police: 100"
+  );
 
 }
 
 
 function showAnnouncement(){
 
-alert(
-"📢 Campus Announcements\n\n"+
-"• Placement training updates\n"+
-"• College events\n"+
-"• Examination updates\n"+
-"• Student activities"
-);
+  alert(
+  "📢 Campus Announcements\n\n"+
+  "• Placement training updates\n"+
+  "• College events\n"+
+  "• Examination updates\n"+
+  "• Student activities"
+  );
 
 }
 
 
 function showEco(){
 
-alert(
-"♻️ Green Campus\n\n"+
-"• Reduce plastic\n"+
-"• Separate waste\n"+
-"• Save electricity\n"+
-"• Save water\n"+
-"• Plant trees"
-);
+  alert(
+  "♻️ Green Campus\n\n"+
+  "• Reduce plastic\n"+
+  "• Separate waste\n"+
+  "• Save electricity\n"+
+  "• Save water\n"+
+  "• Plant trees"
+  );
 
 }
 
+
 function submitReport(){
 
-  const name = document.getElementById("reportName").value.trim();
-  const subject = document.getElementById("reportSubject").value.trim();
-  const message = document.getElementById("reportMessage").value.trim();
+  const name =
+  document.getElementById("reportName").value.trim();
 
-  if(name === "" || subject === "" || message === ""){
+  const subject =
+  document.getElementById("reportSubject").value.trim();
+
+  const message =
+  document.getElementById("reportMessage").value.trim();
+
+
+  if(
+    name === "" ||
+    subject === "" ||
+    message === ""
+  ){
+
     alert("Please fill all the fields.");
+
     return;
+
   }
 
-  const reportBox = document.getElementById("recentReports");
 
-  const report = document.createElement("div");
+  const reportBox =
+  document.getElementById("recentReports");
+
+
+  const report =
+  document.createElement("div");
+
 
   report.style.background = "white";
+
   report.style.padding = "18px";
+
   report.style.marginTop = "12px";
+
   report.style.borderRadius = "12px";
-  report.style.border = "1px solid #e5e7eb";
+
+  report.style.border =
+  "1px solid #e5e7eb";
+
 
   report.innerHTML =
-    "<strong>📝 " + subject + "</strong>" +
-    "<p style='margin-top:7px;color:#6b7280;'>" + message + "</p>" +
-    "<small style='color:#2563eb;'>Reported by: " + name + " • Status: Submitted ✅</small>";
+
+  "<strong>📝 " +
+  subject +
+  "</strong>" +
+
+  "<p style='margin-top:7px;color:#6b7280;'>" +
+  message +
+  "</p>" +
+
+  "<small style='color:#2563eb;'>" +
+  "Reported by: " +
+  name +
+  " • Status: Submitted ✅" +
+  "</small>";
+
 
   reportBox.prepend(report);
 
+
   alert("✅ Report submitted successfully!");
 
+
   document.getElementById("reportName").value = "";
+
   document.getElementById("reportSubject").value = "";
+
   document.getElementById("reportMessage").value = "";
+
 }
 
 </script>
