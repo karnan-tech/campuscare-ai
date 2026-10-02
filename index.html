@@ -1,263 +1,779 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CampusCare AI</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<title>CampusCare AI</title>
 
-    body {
-      background: #f5f7fb;
-      color: #172033;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 8%;
-      background: white;
-      border-bottom: 1px solid #e5e7eb;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #2563eb;
-    }
+body{
+  background:#f5f7fb;
+  color:#172033;
+}
 
-    nav a {
-      text-decoration: none;
-      color: #374151;
-      margin-left: 25px;
-      font-weight: 500;
-    }
+/* NAVBAR */
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 7%;
+  background:white;
+  border-bottom:1px solid #e5e7eb;
+}
 
-    .hero {
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 70px 8%;
-      background: linear-gradient(135deg, #eff6ff, #f0fdf4);
-    }
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:#2563eb;
+}
 
-    .hero-text {
-      max-width: 600px;
-    }
+nav a{
+  text-decoration:none;
+  color:#374151;
+  margin-left:22px;
+  font-weight:500;
+}
 
-    .hero h1 {
-      font-size: 52px;
-      line-height: 1.1;
-      margin-bottom: 20px;
-    }
+nav a:hover{
+  color:#2563eb;
+}
 
-    .hero h1 span {
-      color: #2563eb;
-    }
+/* HERO */
+.hero{
+  min-height:560px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:70px 8%;
+  background:linear-gradient(135deg,#eff6ff,#f0fdf4);
+}
 
-    .hero p {
-      font-size: 19px;
-      line-height: 1.6;
-      color: #5b6475;
-      margin-bottom: 30px;
-    }
+.hero-text{
+  max-width:650px;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 14px 24px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: bold;
-    }
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:30px;
+  background:#dbeafe;
+  color:#2563eb;
+  font-weight:bold;
+  margin-bottom:20px;
+}
 
-    .features {
-      padding: 60px 8%;
-      text-align: center;
-    }
+.hero h1{
+  font-size:55px;
+  line-height:1.1;
+  margin-bottom:20px;
+}
 
-    .features h2 {
-      font-size: 32px;
-      margin-bottom: 12px;
-    }
+.hero h1 span{
+  color:#2563eb;
+}
 
-    .features > p {
-      color: #6b7280;
-      margin-bottom: 35px;
-    }
+.hero p{
+  font-size:19px;
+  line-height:1.6;
+  color:#5b6475;
+  margin-bottom:30px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
+.btn{
+  display:inline-block;
+  padding:14px 24px;
+  background:#2563eb;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+}
 
-    .card {
-      background: white;
-      padding: 30px 22px;
-      border-radius: 16px;
-      border: 1px solid #e5e7eb;
-      transition: 0.3s;
-    }
+.btn:hover{
+  background:#1d4ed8;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    }
+.robot{
+  font-size:150px;
+}
 
-    .icon {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
+/* SECTIONS */
+section{
+  scroll-margin-top:80px;
+}
 
-    .card h3 {
-      margin-bottom: 10px;
-    }
+.features{
+  padding:70px 8%;
+  text-align:center;
+}
 
-    .card p {
-      color: #6b7280;
-      line-height: 1.5;
-    }
+.section-title{
+  font-size:36px;
+  margin-bottom:12px;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #172033;
-      color: white;
-      margin-top: 20px;
-    }
+.section-subtitle{
+  color:#6b7280;
+  margin-bottom:40px;
+}
 
-    @media (max-width: 800px) {
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-      }
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
 
-      .hero h1 {
-        font-size: 40px;
-      }
+.card{
+  background:white;
+  padding:30px 22px;
+  border-radius:18px;
+  border:1px solid #e5e7eb;
+  transition:.3s;
+  text-align:left;
+}
 
-      .cards {
-        grid-template-columns: 1fr;
-      }
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
 
-      nav a {
-        display: none;
-      }
-    }
-  </style>
+.icon{
+  font-size:38px;
+  margin-bottom:15px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#6b7280;
+  line-height:1.5;
+}
+
+.card button{
+  margin-top:18px;
+  padding:10px 16px;
+  border:none;
+  border-radius:8px;
+  background:#eff6ff;
+  color:#2563eb;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* AI SECTION */
+.ai-section{
+  padding:70px 8%;
+  background:#111827;
+  color:white;
+}
+
+.ai-box{
+  max-width:850px;
+  margin:auto;
+  background:#1f2937;
+  border-radius:20px;
+  padding:30px;
+}
+
+.chat{
+  height:260px;
+  overflow-y:auto;
+  background:#111827;
+  border-radius:12px;
+  padding:20px;
+  margin-bottom:18px;
+}
+
+.message{
+  padding:12px 15px;
+  border-radius:12px;
+  margin-bottom:12px;
+  max-width:80%;
+  line-height:1.5;
+}
+
+.bot{
+  background:#374151;
+}
+
+.user{
+  background:#2563eb;
+  margin-left:auto;
+}
+
+.chat-input{
+  display:flex;
+  gap:10px;
+}
+
+.chat-input input{
+  flex:1;
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+}
+
+/* INFO */
+.info-section{
+  padding:70px 8%;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.info-box{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  border:1px solid #e5e7eb;
+}
+
+.info-box h3{
+  margin-bottom:15px;
+}
+
+.info-box p,
+.info-box li{
+  color:#5b6475;
+  line-height:1.7;
+}
+
+.info-box ul{
+  padding-left:20px;
+}
+
+/* REPORT */
+.report{
+  padding:70px 8%;
+  background:#eff6ff;
+  text-align:center;
+}
+
+.report-form{
+  max-width:600px;
+  margin:30px auto 0;
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  text-align:left;
+}
+
+.report-form input,
+.report-form textarea{
+  width:100%;
+  padding:13px;
+  margin-bottom:15px;
+  border:1px solid #d1d5db;
+  border-radius:9px;
+  outline:none;
+}
+
+.report-form textarea{
+  height:120px;
+  resize:none;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:28px;
+  background:#172033;
+  color:white;
+}
+
+@media(max-width:800px){
+
+  nav{
+    padding:16px 5%;
+  }
+
+  nav a{
+    display:none;
+  }
+
+  .hero{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+  }
+
+  .hero h1{
+    font-size:42px;
+  }
+
+  .robot{
+    font-size:100px;
+  }
+
+  .cards,
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="logo">🎓 CampusCare AI</div>
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">🎓 CampusCare AI</div>
 
-    <div>
-      <a href="#home">Home</a>
-      <a href="#features">Features</a>
-      <a href="#about">About</a>
-    </div>
-  </nav>
+  <div>
+    <a href="#home">Home</a>
+    <a href="#features">Features</a>
+    <a href="#assistant">AI Assistant</a>
+    <a href="#report">Report</a>
+  </div>
+</nav>
 
-  <section class="hero" id="home">
 
-    <div class="hero-text">
-      <h1>
-        Your Smart <span>Campus Assistant</span>
-      </h1>
+<!-- HERO -->
+<section class="hero" id="home">
 
-      <p>
-        One simple platform for students to access campus information,
-        study resources, emergency support and smart assistance.
-      </p>
+  <div class="hero-text">
 
-      <a href="#features" class="btn">
-        Explore CampusCare →
-      </a>
-    </div>
+    <div class="badge">🚀 Smart Campus Innovation</div>
 
-    <div style="font-size: 150px;">
-      🎓🤖
-    </div>
-
-  </section>
-
-  <section class="features" id="features">
-
-    <h2>Everything Students Need</h2>
+    <h1>
+      Your Smart <span>Campus Assistant</span>
+    </h1>
 
     <p>
-      Smart tools designed to make campus life easier.
+      One intelligent platform that helps students access
+      campus information, study resources, emergency support
+      and sustainability solutions.
     </p>
 
-    <div class="cards">
+    <a href="#features" class="btn">
+      Explore CampusCare →
+    </a>
 
-      <div class="card">
-        <div class="icon">🤖</div>
-        <h3>AI Assistant</h3>
-        <p>
-          Get quick answers to common campus and student questions.
-        </p>
-      </div>
+  </div>
 
-      <div class="card">
-        <div class="icon">📚</div>
-        <h3>Study Hub</h3>
-        <p>
-          Access useful study materials and academic resources.
-        </p>
-      </div>
+  <div class="robot">
+    🎓🤖
+  </div>
 
-      <div class="card">
-        <div class="icon">🚨</div>
-        <h3>Emergency Help</h3>
-        <p>
-          Quickly find important emergency contacts and support.
-        </p>
-      </div>
+</section>
 
-      <div class="card">
-        <div class="icon">📢</div>
-        <h3>Announcements</h3>
-        <p>
-          Stay updated with important campus announcements.
-        </p>
-      </div>
 
-      <div class="card">
-        <div class="icon">♻️</div>
-        <h3>Sustainability</h3>
-        <p>
-          Learn and participate in eco-friendly campus activities.
-        </p>
-      </div>
+<!-- FEATURES -->
+<section class="features" id="features">
 
-      <div class="card">
-        <div class="icon">📝</div>
-        <h3>Report an Issue</h3>
-        <p>
-          Report campus problems and help improve student life.
-        </p>
+  <h2 class="section-title">Everything Students Need</h2>
+
+  <p class="section-subtitle">
+    Smart tools designed to make campus life easier.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="icon">🤖</div>
+      <h3>AI Assistant</h3>
+      <p>
+        Ask common campus questions and get instant guidance.
+      </p>
+      <button onclick="openAssistant()">Ask AI →</button>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">📚</div>
+      <h3>Study Hub</h3>
+      <p>
+        Find useful academic resources and study support.
+      </p>
+      <button onclick="showStudy()">Explore →</button>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">🚨</div>
+      <h3>Emergency Help</h3>
+      <p>
+        Quickly access important emergency contacts.
+      </p>
+      <button onclick="showEmergency()">View Contacts →</button>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">📢</div>
+      <h3>Announcements</h3>
+      <p>
+        Stay updated with important campus announcements.
+      </p>
+      <button onclick="showAnnouncement()">View Updates →</button>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">♻️</div>
+      <h3>Sustainability</h3>
+      <p>
+        Discover simple ways to build a greener campus.
+      </p>
+      <button onclick="showEco()">Learn More →</button>
+    </div>
+
+
+    <div class="card">
+      <div class="icon">📝</div>
+      <h3>Report an Issue</h3>
+      <p>
+        Report campus problems and help improve student life.
+      </p>
+      <button onclick="location.href='#report'">
+        Report Now →
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- AI ASSISTANT -->
+<section class="ai-section" id="assistant">
+
+  <h2 class="section-title" style="text-align:center;">
+    🤖 CampusCare AI Assistant
+  </h2>
+
+  <p class="section-subtitle" style="text-align:center;color:#cbd5e1;">
+    Ask a question about campus life.
+  </p>
+
+  <div class="ai-box">
+
+    <div class="chat" id="chat">
+
+      <div class="message bot">
+        👋 Hi! I'm CampusCare AI. Ask me about the library,
+        emergency help, study resources or campus facilities.
       </div>
 
     </div>
 
-  </section>
+    <div class="chat-input">
 
-  <footer id="about">
-    <p>© 2026 CampusCare AI | Hackathon Project</p>
-  </footer>
+      <input
+        id="userInput"
+        type="text"
+        placeholder="Ask something..."
+        onkeydown="if(event.key==='Enter') askAI()"
+      >
+
+      <button class="btn" onclick="askAI()">
+        Send
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- INFORMATION -->
+<section class="info-section">
+
+  <h2 class="section-title" style="text-align:center;">
+    📚 Student Information Hub
+  </h2>
+
+  <p class="section-subtitle" style="text-align:center;">
+    Quick access to useful campus information.
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-box">
+      <h3>📖 Study Resources</h3>
+
+      <ul>
+        <li>Programming fundamentals</li>
+        <li>Engineering mathematics</li>
+        <li>Placement preparation</li>
+        <li>Technical learning resources</li>
+      </ul>
+    </div>
+
+
+    <div class="info-box">
+      <h3>🚨 Emergency Support</h3>
+
+      <ul>
+        <li>Campus Security: 100</li>
+        <li>Emergency Services: 112</li>
+        <li>Ambulance: 108</li>
+        <li>Campus Help Desk: Available 24/7</li>
+      </ul>
+    </div>
+
+
+    <div class="info-box">
+      <h3>📢 Campus Updates</h3>
+
+      <p>
+        • Placement training updates<br>
+        • College events<br>
+        • Examination announcements<br>
+        • Student activities
+      </p>
+    </div>
+
+
+    <div class="info-box">
+      <h3>♻️ Green Campus</h3>
+
+      <p>
+        Reduce plastic usage, separate waste,
+        save electricity and water, and participate
+        in campus tree-planting activities.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- REPORT -->
+<section class="report" id="report">
+
+  <h2 class="section-title">
+    📝 Report a Campus Issue
+  </h2>
+
+  <p class="section-subtitle">
+    Help us make the campus better.
+  </p>
+
+  <div class="report-form">
+
+    <input
+      id="reportName"
+      type="text"
+      placeholder="Your Name"
+    >
+
+    <input
+      id="reportSubject"
+      type="text"
+      placeholder="Issue Title"
+    >
+
+    <textarea
+      id="reportMessage"
+      placeholder="Describe the issue..."
+    ></textarea>
+
+    <button class="btn" onclick="submitReport()">
+      Submit Report
+    </button>
+
+  </div>
+
+</section>
+
+
+<footer>
+  <p>© 2026 CampusCare AI | Hackathon Project</p>
+  <p style="margin-top:8px;">
+    One Campus. One Smart Assistant.
+  </p>
+</footer>
+
+
+<script>
+
+/* AI ASSISTANT */
+
+function openAssistant(){
+  document.getElementById("assistant").scrollIntoView();
+  document.getElementById("userInput").focus();
+}
+
+
+function askAI(){
+
+  const input = document.getElementById("userInput");
+  const chat = document.getElementById("chat");
+
+  const question = input.value.trim();
+
+  if(question === ""){
+    return;
+  }
+
+  chat.innerHTML += `
+    <div class="message user">
+      ${question}
+    </div>
+  `;
+
+  let answer = "";
+
+  const q = question.toLowerCase();
+
+  if(q.includes("library")){
+    answer =
+    "📚 The library section can provide information about library location, timings and available resources.";
+  }
+
+  else if(q.includes("emergency") || q.includes("ambulance")){
+    answer =
+    "🚨 For emergencies, contact 112. Ambulance service in India can be reached at 108.";
+  }
+
+  else if(q.includes("study") || q.includes("notes")){
+    answer =
+    "📖 You can use the Study Hub for academic resources, placement preparation and learning materials.";
+  }
+
+  else if(q.includes("placement")){
+    answer =
+    "💼 Placement preparation can include aptitude, coding, communication and interview practice.";
+  }
+
+  else if(q.includes("exam")){
+    answer =
+    "📝 Check your college's official announcements for examination schedules and updates.";
+  }
+
+  else if(q.includes("eco") || q.includes("environment") || q.includes("waste")){
+    answer =
+    "♻️ You can help the campus by reducing plastic, separating waste and saving electricity and water.";
+  }
+
+  else if(q.includes("hello") || q.includes("hi")){
+    answer =
+    "👋 Hello! I'm CampusCare AI. How can I help you today?";
+  }
+
+  else{
+    answer =
+    "🤖 I can help with campus information, study resources, emergency support, placements and sustainability.";
+  }
+
+  setTimeout(function(){
+
+    chat.innerHTML += `
+      <div class="message bot">
+        ${answer}
+      </div>
+    `;
+
+    chat.scrollTop = chat.scrollHeight;
+
+  },500);
+
+  input.value = "";
+}
+
+
+/* FEATURE POPUPS */
+
+function showStudy(){
+  alert(
+    "📚 Study Hub\n\n" +
+    "• Programming Resources\n" +
+    "• Mathematics\n" +
+    "• Placement Preparation\n" +
+    "• Technical Learning"
+  );
+}
+
+
+function showEmergency(){
+  alert(
+    "🚨 Emergency Help\n\n" +
+    "Emergency: 112\n" +
+    "Ambulance: 108\n" +
+    "Campus Security: 100"
+  );
+}
+
+
+function showAnnouncement(){
+  alert(
+    "📢 Campus Announcements\n\n" +
+    "• Placement training updates\n" +
+    "• College events\n" +
+    "• Examination updates\n" +
+    "• Student activities"
+  );
+}
+
+
+function showEco(){
+  alert(
+    "♻️ Green Campus\n\n" +
+    "• Reduce plastic\n" +
+    "• Separate waste\n" +
+    "• Save electricity\n" +
+    "• Save water\n" +
+    "• Plant trees"
+  );
+}
+
+
+/* REPORT */
+
+function submitReport(){
+
+  const name =
+    document.getElementById("reportName").value.trim();
+
+  const subject =
+    document.getElementById("reportSubject").value.trim();
+
+  const message =
+    document.getElementById("reportMessage").value.trim();
+
+  if(name === "" || subject === "" || message === ""){
+    alert("Please fill all the fields.");
+    return;
+  }
+
+  alert(
+    "✅ Report submitted successfully!\n\n" +
+    "Thank you, " + name + "."
+  );
+
+  document.getElementById("reportName").value = "";
+  document.getElementById("reportSubject").value = "";
+  document.getElementById("reportMessage").value = "";
+}
+
+</script>
 
 </body>
 </html>
