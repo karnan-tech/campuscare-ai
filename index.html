@@ -438,6 +438,20 @@ footer{
 
 <body>
 
+<!-- STUDENT LOGIN -->
+
+<div id="loginPage" style="
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:linear-gradient(135deg,#eff6ff,#f0fdf4);
+padding:30px;
+">
+
+...
+</div>
+
 <!-- NAVBAR -->
 
 <nav>
@@ -967,7 +981,24 @@ One Campus. One Smart Assistant.
 </p>
 
 </footer>
+function studentLogin(){
 
+  const id = document.getElementById("loginId").value.trim();
+  const password = document.getElementById("loginPassword").value.trim();
+
+  if(id === "CCAI-2026" && password === "1234"){
+
+    document.getElementById("loginPage").style.display = "none";
+
+    alert("✅ Login successful! Welcome Campus Student.");
+
+  }else{
+
+    alert("❌ Invalid Student ID or Password.");
+
+  }
+
+}
 
 <script>
 
