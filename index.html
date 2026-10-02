@@ -920,7 +920,7 @@ in campus tree-planting activities.
 <h2 class="section-title">
 📝 Report a Campus Issue
 </h2>
-
+<div id="recentReports" style="max-width:600px;margin:25px auto 0;text-align:left;"></div>
 <p class="section-subtitle">
 Help us make the campus better.
 </p>
@@ -1130,42 +1130,44 @@ alert(
 }
 
 
-function submitReport(){
-
-const name=
-document.getElementById("reportName").value.trim();
-
-const subject=
-document.getElementById("reportSubject").value.trim();
-
-const message=
-document.getElementById("reportMessage").value.trim();
-
-
-if(
-name==="" ||
-subject==="" ||
-message===""
-){
-
-alert("Please fill all the fields.");
-
-return;
 
 }
 
+function submitReport(){
 
-alert(
-"✅ Report submitted successfully!\n\n"+
-"Thank you, "+name+"."
-);
+  const name = document.getElementById("reportName").value.trim();
+  const subject = document.getElementById("reportSubject").value.trim();
+  const message = document.getElementById("reportMessage").value.trim();
 
+  if(name === "" || subject === "" || message === ""){
+    alert("Please fill all the fields.");
+    return;
+  }
 
-document.getElementById("reportName").value="";
+  const reportBox = document.getElementById("recentReports");
 
-document.getElementById("reportSubject").value="";
+  const report = document.createElement("div");
 
-document.getElementById("reportMessage").value="";
+  report.style.background = "white";
+  report.style.padding = "18px";
+  report.style.marginTop = "12px";
+  report.style.borderRadius = "12px";
+  report.style.border = "1px solid #e5e7eb";
+
+  report.innerHTML =
+    "<strong>📝 " + subject + "</strong>" +
+    "<p style='margin-top:7px;color:#6b7280;'>" + message + "</p>" +
+    "<small style='color:#2563eb;'>Reported by: " + name + " • Status: Submitted ✅</small>";
+
+  reportBox.prepend(report);
+
+  alert("✅ Report submitted successfully!");
+
+  document.getElementById("reportName").value = "";
+  document.getElementById("reportSubject").value = "";
+  document.getElementById("reportMessage").value = "";
+
+}
 
 }
 
