@@ -342,6 +342,112 @@ color:#4b5563;
 border-bottom:none;
 }
 
+/* SMART CAMPUS */
+
+.smart-campus{
+padding:70px 8%;
+background:#f8fafc;
+}
+
+.smart-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:22px;
+}
+
+.smart-box{
+background:white;
+padding:28px;
+border-radius:18px;
+border:1px solid #e5e7eb;
+}
+
+.smart-box h3{
+margin-bottom:15px;
+}
+
+.id-card{
+background:linear-gradient(135deg,#2563eb,#1d4ed8);
+color:white;
+padding:22px;
+border-radius:16px;
+}
+
+.id-card h2{
+margin-bottom:15px;
+}
+
+.id-card p{
+margin-top:8px;
+color:#dbeafe;
+}
+
+/* TIMETABLE */
+
+.timetable-container{
+overflow-x:auto;
+}
+
+.timetable{
+width:100%;
+border-collapse:collapse;
+min-width:850px;
+}
+
+.timetable th,
+.timetable td{
+padding:14px 12px;
+border:1px solid #e5e7eb;
+text-align:center;
+font-size:14px;
+}
+
+.timetable th{
+background:#eff6ff;
+color:#2563eb;
+font-weight:bold;
+}
+
+.timetable td{
+background:white;
+}
+
+.timetable .break{
+background:#fef3c7;
+color:#92400e;
+font-weight:bold;
+}
+
+.timetable .lunch{
+background:#dcfce7;
+color:#166534;
+font-weight:bold;
+}
+
+.map-list{
+list-style:none;
+}
+
+.map-list li{
+padding:12px 0;
+border-bottom:1px solid #e5e7eb;
+}
+
+.map-list li:last-child{
+border-bottom:none;
+}
+
+.map-btn{
+margin-top:15px;
+padding:10px 15px;
+border:none;
+border-radius:8px;
+background:#eff6ff;
+color:#2563eb;
+font-weight:bold;
+cursor:pointer;
+}
+
 /* AI */
 
 .ai-section{
@@ -473,6 +579,14 @@ color:white;
 
 /* MOBILE */
 
+@media(max-width:1000px){
+
+.smart-grid{
+grid-template-columns:1fr;
+}
+
+}
+
 @media(max-width:900px){
 
 .dashboard-grid{
@@ -537,9 +651,7 @@ grid-template-columns:1fr;
 </style>
 </head>
 
-
 <body>
-
 
 <!-- ================= LOGIN ================= -->
 
@@ -547,13 +659,9 @@ grid-template-columns:1fr;
 
 <div class="login-box">
 
-<h2>
-🎓 Student Login
-</h2>
+<h2>🎓 Student Login</h2>
 
-<p>
-Login to access CampusCare AI
-</p>
+<p>Login to access CampusCare AI</p>
 
 <input
 id="loginId"
@@ -573,8 +681,7 @@ placeholder="Password"
 <button
 class="btn"
 onclick="studentLogin()"
-style="width:100%;"
->
+style="width:100%;">
 Login →
 </button>
 
@@ -592,7 +699,6 @@ Password: 1234
 
 <div id="mainApp" style="display:none;">
 
-
 <!-- NAVBAR -->
 
 <nav>
@@ -605,6 +711,7 @@ Password: 1234
 
 <a href="#home">Home</a>
 <a href="#dashboard">Dashboard</a>
+<a href="#smartCampus">Smart Campus</a>
 <a href="#features">Features</a>
 <a href="#assistant">AI Assistant</a>
 <a href="#report">Report</a>
@@ -662,9 +769,7 @@ Your campus activities and academic overview in one place.
 
 <div class="student-profile">
 
-<h3>
-👤 Student Profile
-</h3>
+<h3>👤 Student Profile</h3>
 
 <p>
 <strong>Name:</strong> Campus Student
@@ -714,12 +819,9 @@ Your campus activities and academic overview in one place.
 
 <div class="dashboard-content">
 
-
 <div class="dashboard-box">
 
-<h3>
-📚 Course Attendance
-</h3>
+<h3>📚 Course Attendance</h3>
 
 <div class="course">
 
@@ -781,20 +883,14 @@ Your campus activities and academic overview in one place.
 
 <div class="dashboard-box">
 
-<h3>
-📢 Latest Updates
-</h3>
+<h3>📢 Latest Updates</h3>
 
 <ul class="dashboard-list">
 
 <li>🎯 Placement training session scheduled</li>
-
 <li>📝 Internal examination updates available</li>
-
 <li>💻 Technical workshop registration open</li>
-
 <li>🌱 Green campus activity this week</li>
-
 <li>📚 New study resources added</li>
 
 </ul>
@@ -804,16 +900,12 @@ Your campus activities and academic overview in one place.
 
 <div class="dashboard-box">
 
-<h3>
-📝 Pending Tasks
-</h3>
+<h3>📝 Pending Tasks</h3>
 
 <ul class="dashboard-list">
 
 <li>💻 Complete Programming Assignment</li>
-
 <li>📊 Submit Mathematics Record</li>
-
 <li>📚 Prepare for Internal Examination</li>
 
 </ul>
@@ -823,9 +915,7 @@ Your campus activities and academic overview in one place.
 
 <div class="dashboard-box">
 
-<h3>
-⚡ Quick Actions
-</h3>
+<h3>⚡ Quick Actions</h3>
 
 <br>
 
@@ -843,6 +933,223 @@ Your campus activities and academic overview in one place.
 
 <button class="btn" onclick="showEmergency()">
 🚨 Emergency Help
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SMART CAMPUS ================= -->
+
+<section class="smart-campus" id="smartCampus">
+
+<h2 class="section-title" style="text-align:center;">
+🏫 Smart Campus Tools
+</h2>
+
+<p class="section-subtitle" style="text-align:center;">
+Everything you need for a smarter campus experience.
+</p>
+
+
+<div class="smart-grid">
+
+
+<!-- DIGITAL STUDENT ID -->
+
+<div class="smart-box">
+
+<h3>🪪 Digital Student ID</h3>
+
+<div class="id-card">
+
+<h2>🎓 CampusCare AI</h2>
+
+<p><strong>Name:</strong> Campus Student</p>
+
+<p><strong>Student ID:</strong> CCAI-2026</p>
+
+<p><strong>Department:</strong> CSE</p>
+
+<p><strong>Status:</strong> Active Student ✅</p>
+
+</div>
+
+<button
+class="map-btn"
+onclick="showStudentID()">
+View Student ID
+</button>
+
+</div>
+
+
+<!-- WEEKLY TIMETABLE -->
+
+<div class="smart-box" style="grid-column:span 2;">
+
+<h3>📅 Weekly Class Timetable</h3>
+
+<div class="timetable-container">
+
+<table class="timetable">
+
+<tr>
+
+<th>Time</th>
+<th>Monday</th>
+<th>Tuesday</th>
+<th>Wednesday</th>
+<th>Thursday</th>
+<th>Friday</th>
+
+</tr>
+
+<tr>
+
+<td><strong>9:00–10:00</strong></td>
+
+<td>📐 Maths</td>
+<td>🔬 Science</td>
+<td>📘 English</td>
+<td>📖 Tamil</td>
+<td>📚 Social</td>
+
+</tr>
+
+<tr>
+
+<td><strong>10:00–11:15</strong></td>
+
+<td>🔬 Science</td>
+<td>📚 Social</td>
+<td>📐 Maths</td>
+<td>📘 English</td>
+<td>📖 Tamil</td>
+
+</tr>
+
+<tr>
+
+<td class="break">
+11:15–11:30
+</td>
+
+<td class="break">☕ Break</td>
+<td class="break">☕ Break</td>
+<td class="break">☕ Break</td>
+<td class="break">☕ Break</td>
+<td class="break">☕ Break</td>
+
+</tr>
+
+<tr>
+
+<td><strong>11:30–12:30</strong></td>
+
+<td>📚 Social</td>
+<td>📖 Tamil</td>
+<td>🔬 Science</td>
+<td>📐 Maths</td>
+<td>📘 English</td>
+
+</tr>
+
+<tr>
+
+<td class="lunch">
+12:30–1:30
+</td>
+
+<td class="lunch">🍱 Lunch</td>
+<td class="lunch">🍱 Lunch</td>
+<td class="lunch">🍱 Lunch</td>
+<td class="lunch">🍱 Lunch</td>
+<td class="lunch">🍱 Lunch</td>
+
+</tr>
+
+<tr>
+
+<td><strong>1:30–2:30</strong></td>
+
+<td>📖 Tamil</td>
+<td>📘 English</td>
+<td>📚 Social</td>
+<td>🔬 Science</td>
+<td>📐 Maths</td>
+
+</tr>
+
+<tr>
+
+<td><strong>2:30–3:30</strong></td>
+
+<td>📘 English</td>
+<td>📐 Maths</td>
+<td>📖 Tamil</td>
+<td>📚 Social</td>
+<td>🔬 Science</td>
+
+</tr>
+
+<tr>
+
+<td class="break">
+3:30–3:45
+</td>
+
+<td class="break">☕ Break</td>
+<td class="break">☕ Break</td>
+<td class="break">☕ Break</td>
+<td class="break">☕ Break</td>
+<td class="break">☕ Break</td>
+
+</tr>
+
+<tr>
+
+<td><strong>3:45–4:30</strong></td>
+
+<td>🏃 PT</td>
+<td>💻 Computer</td>
+<td>🏃 PT</td>
+<td>💻 Computer</td>
+<td>🏃 PT</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+
+<!-- CAMPUS MAP -->
+
+<div class="smart-box">
+
+<h3>📍 Campus Map</h3>
+
+<ul class="map-list">
+
+<li>📚 Library</li>
+<li>💻 Computer Lab</li>
+<li>🍴 Canteen</li>
+<li>🏢 Administrative Office</li>
+<li>🏥 Medical Centre</li>
+<li>🎓 Seminar Hall</li>
+
+</ul>
+
+<button
+class="map-btn"
+onclick="showCampusMap()">
+Explore Campus →
 </button>
 
 </div>
@@ -993,7 +1300,7 @@ Ask a question about campus life.
 
 <div class="message bot">
 👋 Hi! I'm CampusCare AI. Ask me about the library,
-emergency help, study resources or campus facilities.
+emergency help, study resources, timetable or campus facilities.
 </div>
 
 </div>
@@ -1037,9 +1344,7 @@ Quick access to useful campus information.
 
 <div class="info-box">
 
-<h3>
-📖 Study Resources
-</h3>
+<h3>📖 Study Resources</h3>
 
 <ul>
 
@@ -1055,9 +1360,7 @@ Quick access to useful campus information.
 
 <div class="info-box">
 
-<h3>
-🚨 Emergency Support
-</h3>
+<h3>🚨 Emergency Support</h3>
 
 <ul>
 
@@ -1073,9 +1376,7 @@ Quick access to useful campus information.
 
 <div class="info-box">
 
-<h3>
-📢 Campus Updates
-</h3>
+<h3>📢 Campus Updates</h3>
 
 <p>
 • Placement training updates<br>
@@ -1089,9 +1390,7 @@ Quick access to useful campus information.
 
 <div class="info-box">
 
-<h3>
-♻️ Green Campus
-</h3>
+<h3>♻️ Green Campus</h3>
 
 <p>
 Reduce plastic usage, separate waste,
@@ -1186,7 +1485,6 @@ document.getElementById("loginId").value.trim();
 var password =
 document.getElementById("loginPassword").value.trim();
 
-
 if(
 studentId === "CCAI-2026" &&
 password === "1234"
@@ -1235,17 +1533,14 @@ document.getElementById("chat");
 var question =
 input.value.trim();
 
-
 if(question === ""){
 return;
 }
-
 
 chat.innerHTML +=
 '<div class="message user">' +
 question +
 '</div>';
-
 
 var q =
 question.toLowerCase();
@@ -1306,6 +1601,36 @@ answer =
 }
 
 else if(
+q.includes("timetable") ||
+q.includes("class")
+){
+
+answer =
+"📅 Weekly timetable: Monday Maths, Science, Social, Tamil, English and PT. Tuesday to Friday the subjects rotate across the same periods. Open Smart Campus → Weekly Class Timetable to view the full schedule.";
+
+}
+
+else if(
+q.includes("map") ||
+q.includes("location")
+){
+
+answer =
+"📍 Campus Map includes Library, Computer Lab, Canteen, Administrative Office, Medical Centre and Seminar Hall.";
+
+}
+
+else if(
+q.includes("student id") ||
+q.includes("id card")
+){
+
+answer =
+"🪪 Your Digital Student ID is CCAI-2026. Department: CSE. Status: Active Student.";
+
+}
+
+else if(
 q.includes("hello") ||
 q.includes("hi")
 ){
@@ -1318,7 +1643,7 @@ answer =
 else{
 
 answer =
-"🤖 I can help with campus information, study resources, emergency support, placements and sustainability.";
+"🤖 I can help with campus information, study resources, emergency support, placements, timetable, campus map and sustainability.";
 
 }
 
@@ -1334,7 +1659,6 @@ chat.scrollTop =
 chat.scrollHeight;
 
 },500);
-
 
 input.value="";
 
@@ -1401,6 +1725,38 @@ alert(
 }
 
 
+/* DIGITAL STUDENT ID */
+
+function showStudentID(){
+
+alert(
+"🪪 Digital Student ID\n\n" +
+"Name: Campus Student\n" +
+"Student ID: CCAI-2026\n" +
+"Department: CSE\n" +
+"Status: Active Student ✅"
+);
+
+}
+
+
+/* CAMPUS MAP */
+
+function showCampusMap(){
+
+alert(
+"📍 Campus Locations\n\n" +
+"📚 Library\n" +
+"💻 Computer Lab\n" +
+"🍴 Canteen\n" +
+"🏢 Administrative Office\n" +
+"🏥 Medical Centre\n" +
+"🎓 Seminar Hall"
+);
+
+}
+
+
 /* REPORT */
 
 function submitReport(){
@@ -1414,7 +1770,6 @@ document.getElementById("reportSubject").value.trim();
 var message =
 document.getElementById("reportMessage").value.trim();
 
-
 if(
 name === "" ||
 subject === "" ||
@@ -1427,24 +1782,17 @@ return;
 
 }
 
-
 var reportBox =
 document.getElementById("recentReports");
 
 var report =
 document.createElement("div");
 
-
 report.style.background="white";
-
 report.style.padding="18px";
-
 report.style.marginTop="12px";
-
 report.style.borderRadius="12px";
-
 report.style.border="1px solid #e5e7eb";
-
 
 report.innerHTML =
 
@@ -1462,17 +1810,12 @@ name +
 " • Status: Submitted ✅" +
 "</small>";
 
-
 reportBox.prepend(report);
-
 
 alert("✅ Report submitted successfully!");
 
-
 document.getElementById("reportName").value="";
-
 document.getElementById("reportSubject").value="";
-
 document.getElementById("reportMessage").value="";
 
 }
